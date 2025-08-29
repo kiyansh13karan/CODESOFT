@@ -5,7 +5,6 @@ def get_choices():
     options = ["rock", "paper", "scissors"]
     user_choice = input("Enter your choice (rock, paper, or scissors): ").lower()
     
-    # Input validation
     while user_choice not in options:
         user_choice = input("Invalid choice. Please enter 'rock', 'paper', or 'scissors': ").lower()
     
@@ -16,13 +15,13 @@ def get_choices():
 def determine_winner(user, computer):
     """Determines the winner based on the game logic."""
     if user == computer:
-        return "It's a tie! 🤝"
+        return "It's a tie! "
     elif (user == "rock" and computer == "scissors") or \
          (user == "scissors" and computer == "paper") or \
          (user == "paper" and computer == "rock"):
-        return "You win! 🎉"
+        return "You win! "
     else:
-        return "You lose! 😢"
+        return "You lose!"
 
 def play_game():
     """Main function to run the game, track scores, and handle multiple rounds."""
@@ -42,7 +41,6 @@ def play_game():
         result = determine_winner(user_choice, computer_choice)
         print(f"Result: {result}")
         
-        # Update scores based on the result
         if "You win" in result:
             user_score += 1
         elif "You lose" in result:
